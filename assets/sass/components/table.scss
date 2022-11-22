@@ -1,0 +1,51 @@
+.table.b-table > thead > tr > .table-b-table-default,
+.table.b-table > tbody > tr > .table-b-table-default,
+.table.b-table > tfoot > tr > .table-b-table-default {
+  background-color: $pink-bg;
+}
+
+.table {
+  color: $secondary;
+
+  th, td {
+    vertical-align: middle;
+
+    &.min-w-100 {
+      min-width: 100px;
+    }
+  
+    &.min-w-300 {
+      min-width: 300px;
+    }
+  }
+
+  tr {
+    border-bottom: 1px solid $pink-bg;
+    transition: all 0.3s ease-in-out;
+    cursor: pointer;
+
+    &:hover {
+      border-color: $primary;
+    }
+
+    svg:hover {
+      color: $primary;
+    }
+  }
+}
+
+.table-hover tbody tr:hover {
+  color: $secondary;
+  background-color: $pink-bg;
+}
+
+.table.b-table > tbody > .table-active,
+.table.b-table > tbody > .table-active > th,
+.table.b-table > tbody > .table-active > td {
+  background-color: $pink-bg;
+}
+
+.table.b-table > tbody > .table-active {
+  border-left: 2px solid $primary;
+  box-shadow: $box-shadow-normal;
+}

@@ -1,0 +1,8 @@
+.slick-prev::before,
+.slick-next::before {
+  color: $primary !important;
+}
+
+.slick-slide {
+  text-align: center;
+}

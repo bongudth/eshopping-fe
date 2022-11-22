@@ -1,0 +1,35 @@
+ul {
+  margin-bottom: 0;
+
+  .page-item {
+    .page-link {
+      background-color: transparent;
+      color: $secondary;
+      border-color: $secondary;
+      transition: all 0.3s ease-in-out;
+    
+      &:hover {
+        color: $primary;
+        border-color: $primary;
+        box-shadow: $box-shadow-hover;
+      }
+    }
+
+    &.disabled {
+      .page-link {
+        background-color: transparent;
+        color: $grey;
+        border-color: $grey;
+      }
+    }
+
+    &.active {
+      .page-link {
+        background-color: $pink-bg-darker;
+        color: $primary;
+        border-color: $primary;
+        box-shadow: $box-shadow-active;
+      }
+    }
+  }
+}

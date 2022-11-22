@@ -1,0 +1,18 @@
+.dropdown-menu {
+  box-shadow: $box-shadow-normal;
+  border: 1px solid $secondary;
+
+  .dropdown-item {
+    color: $secondary;
+    text-decoration: none;
+
+    &:hover {
+      background-color: $pink-bg;
+      color: $primary;
+    }
+
+    &.disabled {
+      color: $grey;
+    }
+  }
+}

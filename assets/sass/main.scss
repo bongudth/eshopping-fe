@@ -1,0 +1,25 @@
+@import './abstracts/variables.scss';
+@import '~bootstrap/scss/bootstrap.scss';
+@import '~bootstrap-vue/src/index.scss';
+@import './abstracts/mixins.scss';
+
+// Base
+@import './base/bootstrap.scss';
+@import './base/reset.scss';
+@import './base/transitions.scss';
+
+// Components
+@import './components/alert.scss';
+@import './components/auth.scss';
+@import './components/dropdown.scss';
+@import './components/form-section.scss';
+@import './components/form.scss';
+@import './components/navbar.scss';
+@import './components/pagination-nav.scss';
+@import './components/sidebar.scss';
+@import './components/slick-carousel.scss';
+@import './components/table.scss';
+@import './components/vue-select.scss';
+
+// Global
+@import './base/global.scss';
