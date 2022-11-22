@@ -1,0 +1,54 @@
+.b-sidebar {
+  .b-sidebar-header {
+    padding: 1.5rem;
+  }
+
+  .b-sidebar-body {
+    padding: 1.5rem;
+
+    .btn {
+      text-align: left;
+      padding: 0.5rem;
+    }
+
+    .nav-link {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.5rem;
+    }
+
+    .collapse {
+      display: flex;
+      flex-direction: column;
+
+      a {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        border-radius: 0.25rem;
+        border: 1px solid transparent;
+        padding: 0.5rem;
+
+        &.nuxt-link-exact-active {
+          background-color: $pink-bg-darker;
+          color: $primary;
+        }
+
+        &:hover {
+          color: $primary;
+          border-color: $pink-bg-darker;
+          text-decoration: none;
+        }
+
+        &:first-child {
+          margin-top: 0.5rem;
+        }
+
+        &:last-child {
+          margin-bottom: 0.5rem;
+        }
+      }
+    }
+  }
+}

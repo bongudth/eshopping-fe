@@ -1,0 +1,24 @@
+body {
+  font-family: 'Nunito',
+    sans-serif;
+  color: $secondary;
+}
+
+a {
+  color: $secondary;
+  transition: all 0.3s ease-in-out;
+
+  &:hover {
+    color: $primary;
+  }
+}
+
+svg:focus {
+  outline: none;
+}
+
+// Nuxt
+
+.nuxt-progress {
+  background-color: $primary;
+}

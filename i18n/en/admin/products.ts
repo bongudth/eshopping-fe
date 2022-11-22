@@ -1,0 +1,86 @@
+export default {
+  subtitle: 'Manage & Add Product list on your store',
+  filterBar: {
+    addNewProduct: 'Add New Product',
+    searchByProductName: 'Search by Product Name...',
+    all: 'Filter Product Status',
+    active: 'Active',
+    inactive: 'Inactive',
+  },
+  table: {
+    product: 'Product',
+    stock: 'Stock',
+    price: 'Price',
+    discountPrice: 'Discount Price',
+    discount: 'Discount',
+    action: 'Action',
+  },
+  empty: {
+    title: 'Product Empty',
+    description:
+      "You haven't filled in any products yet, let make product by click button below",
+  },
+  modal: {
+    delete: {
+      title: 'Do you want to delete',
+      price: 'Price',
+      stock: 'Stock',
+      status: 'Status',
+      category: 'Category',
+      success: 'Product has been deleted successfully',
+      error: 'Product has not been deleted',
+    },
+  },
+  new: {
+    title: 'Add New Product',
+    publish: 'Publish Product',
+    information: {
+      title: 'Product Information',
+      name: 'Product Name',
+      enterName: 'Enter Product Name',
+      unit: 'Unit',
+      enterUnit: 'Enter Product Unit',
+      category: 'Product Category',
+      selectCategory: 'Select Product Category',
+      loadMoreCategory: 'Load more category...',
+    },
+    management: {
+      title: 'Product Management',
+      status: 'Product Status',
+      active: 'Active',
+      inactive: 'Inactive',
+      price: 'Product Price',
+      enterPrice: 'Enter Product Price',
+    },
+    detail: {
+      title: 'Product Detail',
+      description: 'Product Description',
+      enterDescription: 'EX: Tell your product specs, material, how to use...',
+    },
+    size: {
+      title: 'Product Size',
+      name: 'Size',
+      selectSize: 'Select Product Size',
+      quantity: 'Quantity',
+      enterQuantity: 'Enter Product Quantity',
+      addMoreSize: 'Add More Size',
+    },
+    media: {
+      title: 'Product Media',
+      thumbnails: 'Product Thumbnails',
+      thumbnailTip:
+        'Upload image below with jpg or png format, maximum 5MB (Square Dimension with 1:1 Ratio is recommended)',
+      uploadImage: 'Upload image click here or Drag & Drop',
+      uploadError: 'Image has not been uploaded',
+      addMoreImage: 'Add More Image',
+    },
+    success: 'Product has been added successfully',
+    error: 'Product has not been added',
+  },
+  edit: {
+    title: 'Edit Product',
+    update: 'Update Product',
+    success: 'Product has been updated successfully',
+    error: 'Product has not been updated',
+  },
+};

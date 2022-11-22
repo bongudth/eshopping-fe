@@ -1,0 +1,9 @@
+// Truncate multiline
+@mixin truncate-multiline($line-count) {
+  /*! autoprefixer: off */
+  overflow: hidden;
+  display: -webkit-box;
+  text-overflow: ellipsis;
+  -webkit-line-clamp: $line-count;
+  -webkit-box-orient: vertical;
+}

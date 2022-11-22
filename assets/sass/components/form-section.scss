@@ -1,0 +1,33 @@
+.form-section {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  border: 1px solid $pink-bg;
+  border-radius: 8px;
+  padding: 1.5rem;
+  margin-top: 2rem;
+
+  .section-title {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: $font-large;
+    font-weight: bold;
+    cursor: pointer;
+  }
+
+  .section-icon {
+    transition: all 0.3s ease-in-out;
+  }
+
+  .not-collapsed .section-icon {
+    transform: rotate(180deg);
+  }
+
+  .collapse,
+  .section-content {
+    margin-top: 1.5rem;
+    border-top: 1px solid $pink-bg;
+    padding-top: 1.5rem;
+  }
+}
