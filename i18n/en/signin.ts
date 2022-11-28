@@ -1,0 +1,17 @@
+export default {
+  dontHaveAnAccount: "Don't have an account?",
+  emailAddress: 'Email address',
+  enterYourEmailAddress: 'Enter your email address',
+  enterYourPassword: 'Enter your password',
+  forgotPassword: 'Forgot password?',
+  invalidCredentials: 'Invalid credentials',
+  password: 'Password',
+  pleaseEnterAValidEmailAddress: 'Please enter a valid email address',
+  pleaseEnterAtLeast6Characters: 'Please enter at least 6 characters',
+  rememberMe: 'Remember me',
+  signIn: 'Sign in',
+  signInWithGoogle: 'Sign in with Google',
+  signInSuccessful: 'Sign in successful',
+  signUp: 'Sign up',
+  welcomeBack: 'Welcome back!',
+};

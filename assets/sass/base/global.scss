@@ -1,0 +1,96 @@
+@font-face {
+  font-family: 'Nunito';
+  src: url('https://fonts.googleapis.com/css2?family=Nunito&display=swap');
+}
+
+@font-face {
+  font-family: 'Noto Serif';
+  src: url('https://fonts.googleapis.com/css2?family=Noto+Serif&display=swap');
+}
+
+.background-white {
+  background-color: white;
+}
+
+.background-pink {
+  background-color: $pink-bg;
+}
+
+.background-pink-dark {
+  background-color: $pink-bg-darker;
+}
+
+.h-screen {
+  height: 100vh;
+}
+
+.text-small {
+  font-size: $font-small;
+}
+
+.text-medium {
+  font-size: $font-medium;
+}
+
+.text-large {
+  font-size: $font-large;
+}
+
+.text-super {
+  font-size: $font-super;
+}
+
+.text-line-through {
+  text-decoration: line-through;
+}
+
+.object-fit-cover {
+  object-fit: cover;
+}
+
+.cursor-pointer {
+  cursor: pointer;
+}
+
+.cursor-not-allowed {
+  cursor: not-allowed;
+}
+
+.opacity-50 {
+  opacity: 0.5;
+}
+
+.hidden {
+  display: none;
+}
+
+// Title
+.title {
+  font-family: 'Noto Serif', serif;
+  font-size: $font-super;
+  font-weight: bold;
+
+  @include media-breakpoint-up(sm) {
+    font-size: 40px;
+  }
+
+  @include media-breakpoint-up(xl) {
+    font-size: 70px;
+  }
+}
+
+// Toaster
+.b-toaster.b-toaster-top-right, .b-toaster.b-toaster-top-left, .b-toaster.b-toaster-top-center, .b-toaster.b-toaster-top-full, .b-toaster.b-toaster-bottom-right, .b-toaster.b-toaster-bottom-left, .b-toaster.b-toaster-bottom-center, .b-toaster.b-toaster-bottom-full {
+  margin-top: $header-height;
+}
+
+// Form Select
+option {
+  color: $primary;
+  cursor: pointer;
+
+  &:checked {
+    background-color: $pink-bg;
+    color: $primary;
+  }
+}

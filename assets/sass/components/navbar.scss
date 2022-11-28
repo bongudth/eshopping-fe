@@ -1,0 +1,59 @@
+.navbar {
+  display: flex;
+  justify-content: space-between;
+}
+
+.navbar-nav {
+  align-items: flex-end;
+  gap: 1rem;
+}
+
+.navbar-light .navbar-brand {
+  color: $secondary;
+
+  &:hover {
+    color: $primary;
+  }
+}
+
+.navbar-light .navbar-nav .nav-link {
+  color: $secondary;
+  text-transform: uppercase;
+  padding: 0.5rem 0.5rem;
+  transition: all 0.3s ease-in-out;
+
+  @include media-breakpoint-up(xl) {
+    padding: 0.5rem 1rem;
+  }
+
+  &:hover {
+    color: $primary;
+  }
+}
+
+.button-icon {
+  cursor: pointer;
+
+  @include media-breakpoint-up(lg) {
+    border: 1px solid $secondary;
+
+    &__title {
+      display: none;
+    }
+
+    &:hover {
+      border: 1px solid $primary;
+      color: $primary;
+    }
+  }
+
+  @include media-breakpoint-up(xl) {
+    &__title {
+      display: block;
+    }
+  }
+
+  &:hover {
+    color: $primary;
+  }
+}
