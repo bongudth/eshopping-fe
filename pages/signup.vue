@@ -84,6 +84,54 @@
             </b-form-group>
           </ValidationProvider>
 
+          <ValidationProvider
+            v-slot="{ errors }"
+            vid="password"
+            rules="required|min:6"
+          >
+            <b-form-group
+              :label="$t('confirmEmail.password')"
+              label-for="input-password"
+            >
+              <b-form-input
+                id="input-password"
+                v-model="password"
+                type="password"
+                :state="password !== '' ? !errors[0] : null"
+                :placeholder="$t('confirmEmail.enterYourPassword')"
+                aria-describedby="password-error"
+                trim
+              />
+              <b-form-invalid-feedback id="password-error">
+                {{ $t('confirmEmail.pleaseEnterAtLeast6Characters') }}
+              </b-form-invalid-feedback>
+            </b-form-group>
+          </ValidationProvider>
+
+          <ValidationProvider
+            v-slot="{ errors }"
+            vid="confirmed"
+            rules="required|confirmed:password"
+          >
+            <b-form-group
+              :label="$t('confirmEmail.confirmPassword')"
+              label-for="input-confirm-password"
+            >
+              <b-form-input
+                id="input-confirm-password"
+                v-model="confirm"
+                type="password"
+                :state="confirm !== '' ? !errors[0] : null"
+                :placeholder="$t('confirmEmail.enterYourConfirmPassword')"
+                aria-describedby="confirm-error"
+                trim
+              />
+              <b-form-invalid-feedback id="confirm-error">
+                {{ $t('confirmEmail.passwordsDoNotMatch') }}
+              </b-form-invalid-feedback>
+            </b-form-group>
+          </ValidationProvider>
+
           <b-button
             pill
             block
@@ -131,6 +179,8 @@ export default Vue.extend({
   data() {
     return {
       email: '',
+      password: '',
+      confirm: '',
       isLoading: false,
       isSentEmail: false,
     };
@@ -147,9 +197,10 @@ export default Vue.extend({
         await this.$axios
           .$post('/auth/signup', {
             email: this.email,
+            password: this.password,
           })
           .then(() => {
-            this.isSentEmail = true;
+            this.$router.push(this.localePath({ name: 'signin' }));
           });
 
         this.$root.$bvToast.toast(
@@ -161,6 +212,8 @@ export default Vue.extend({
         );
       } catch (error: any) {
         this.email = '';
+        this.password = '';
+        this.confirm = '';
 
         if (error.statusCode === 409) {
           this.$root.$bvToast.toast(
