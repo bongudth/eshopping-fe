@@ -36,7 +36,6 @@
         </div>
 
         <form
-          v-if="!isSentEmail"
           class="form__container"
           @submit.prevent.stop="handleSubmit(signUp)"
         >
@@ -90,7 +89,7 @@
             rules="required|min:6"
           >
             <b-form-group
-              :label="$t('confirmEmail.password')"
+              :label="$t('signup.password')"
               label-for="input-password"
             >
               <b-form-input
@@ -98,12 +97,12 @@
                 v-model="password"
                 type="password"
                 :state="password !== '' ? !errors[0] : null"
-                :placeholder="$t('confirmEmail.enterYourPassword')"
+                :placeholder="$t('signup.enterYourPassword')"
                 aria-describedby="password-error"
                 trim
               />
               <b-form-invalid-feedback id="password-error">
-                {{ $t('confirmEmail.pleaseEnterAtLeast6Characters') }}
+                {{ $t('signup.pleaseEnterAtLeast6Characters') }}
               </b-form-invalid-feedback>
             </b-form-group>
           </ValidationProvider>
@@ -114,7 +113,7 @@
             rules="required|confirmed:password"
           >
             <b-form-group
-              :label="$t('confirmEmail.confirmPassword')"
+              :label="$t('signup.confirmPassword')"
               label-for="input-confirm-password"
             >
               <b-form-input
@@ -122,12 +121,12 @@
                 v-model="confirm"
                 type="password"
                 :state="confirm !== '' ? !errors[0] : null"
-                :placeholder="$t('confirmEmail.enterYourConfirmPassword')"
+                :placeholder="$t('signup.enterYourConfirmPassword')"
                 aria-describedby="confirm-error"
                 trim
               />
               <b-form-invalid-feedback id="confirm-error">
-                {{ $t('confirmEmail.passwordsDoNotMatch') }}
+                {{ $t('signup.passwordsDoNotMatch') }}
               </b-form-invalid-feedback>
             </b-form-group>
           </ValidationProvider>
@@ -149,15 +148,6 @@
             </router-link>
           </div>
         </form>
-
-        <div v-else class="text-center">
-          <div class="text-primary text-large">
-            {{ $t('signup.pleaseCheckYourEmail') }}
-          </div>
-          <div class="mt-2">
-            {{ $t('signup.anEmailToVerifyYourAccountHasBeenSentToYou') }}
-          </div>
-        </div>
       </ValidationObserver>
     </div>
   </div>
@@ -182,7 +172,6 @@ export default Vue.extend({
       password: '',
       confirm: '',
       isLoading: false,
-      isSentEmail: false,
     };
   },
 
