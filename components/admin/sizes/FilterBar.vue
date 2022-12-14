@@ -1,0 +1,81 @@
+<template>
+  <div class="d-flex background-pink justify-content-between rounded p-3">
+    <div class="d-flex">
+      <b-button
+        variant="primary"
+        class="d-flex align-items-center"
+        style="min-width: fit-content"
+        @click="$router.push(localePath({ name: 'admin-sizes-new' }))"
+      >
+        <IconPlus class="mr-2" />
+        {{ $t('adminSizes.filterBar.addNewSize') }}
+      </b-button>
+      <b-input-group
+        class="
+          background-white
+          align-items-center
+          rounded
+          border border-secondary
+          ml-3
+          pr-2
+        "
+      >
+        <b-form-input
+          v-model="search"
+          :placeholder="$t('adminSizes.filterBar.searchBySizeName')"
+          debounce="500"
+          class="border-0"
+          @change="filterSearch"
+        >
+        </b-form-input>
+        <template #append>
+          <IconSearch class="mx-1" />
+        </template>
+      </b-input-group>
+    </div>
+  </div>
+</template>
+
+<script lang="ts">
+import Vue from 'vue';
+import IconPlus from '~/components/icons/IconPlus.vue';
+import IconSearch from '~/components/icons/IconSearch.vue';
+
+export default Vue.extend({
+  name: 'FilterBar',
+
+  components: { IconPlus, IconSearch },
+
+  data() {
+    return {
+      search: this.$route.query.search || '',
+    };
+  },
+
+  methods: {
+    filterSearch() {
+      this.$router.push({
+        query: {
+          ...this.$route.query,
+          search: this.search,
+          page: '1',
+        },
+      });
+    },
+  },
+});
+</script>
+
+<style lang="scss" scoped>
+.form-control {
+  width: unset;
+
+  &.border-0:focus {
+    box-shadow: none;
+  }
+}
+
+.input-group:focus {
+  box-shadow: 0 0 0 0.2rem #ffdce6;
+}
+</style>

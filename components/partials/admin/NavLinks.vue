@@ -2,32 +2,6 @@
   <nav>
     <b-nav vertical>
       <b-button
-        v-b-toggle.collapse-sales-analytics
-        variant="outline-primary"
-        class="mt-2"
-      >
-        {{ $t('sidebar.sale.title') }}
-      </b-button>
-      <b-collapse id="collapse-sales-analytics" visible>
-        <nuxt-link :to="localePath({ name: 'admin' })">
-          <IconDashboard />
-          {{ $t('sidebar.sale.dashboard') }}
-        </nuxt-link>
-        <nuxt-link :to="localePath({ name: 'admin-statistics-sale' })">
-          <IconSale />
-          {{ $t('sidebar.sale.sale') }}
-        </nuxt-link>
-        <nuxt-link :to="localePath({ name: 'admin-revenue' })">
-          <IconRevenue />
-          {{ $t('sidebar.sale.revenue') }}
-        </nuxt-link>
-        <nuxt-link :to="localePath({ name: 'admin-rating' })">
-          <IconRating />
-          {{ $t('sidebar.sale.rating') }}
-        </nuxt-link>
-      </b-collapse>
-
-      <b-button
         v-b-toggle.collapse-product-management
         variant="outline-primary"
         class="mt-2"
@@ -35,7 +9,7 @@
         {{ $t('sidebar.product.title') }}
       </b-button>
       <b-collapse id="collapse-product-management" visible>
-        <nuxt-link :to="localePath({ name: 'admin-products' })">
+        <nuxt-link :to="localePath({ name: 'admin' })">
           <IconProduct />
           {{ $t('sidebar.product.product') }}
         </nuxt-link>

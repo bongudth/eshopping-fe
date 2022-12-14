@@ -36,7 +36,6 @@
         </div>
 
         <form
-          v-if="!isSentEmail"
           class="form__container"
           @submit.prevent.stop="handleSubmit(signUp)"
         >
@@ -84,6 +83,54 @@
             </b-form-group>
           </ValidationProvider>
 
+          <ValidationProvider
+            v-slot="{ errors }"
+            vid="password"
+            rules="required|min:6"
+          >
+            <b-form-group
+              :label="$t('signup.password')"
+              label-for="input-password"
+            >
+              <b-form-input
+                id="input-password"
+                v-model="password"
+                type="password"
+                :state="password !== '' ? !errors[0] : null"
+                :placeholder="$t('signup.enterYourPassword')"
+                aria-describedby="password-error"
+                trim
+              />
+              <b-form-invalid-feedback id="password-error">
+                {{ $t('signup.pleaseEnterAtLeast6Characters') }}
+              </b-form-invalid-feedback>
+            </b-form-group>
+          </ValidationProvider>
+
+          <ValidationProvider
+            v-slot="{ errors }"
+            vid="confirmed"
+            rules="required|confirmed:password"
+          >
+            <b-form-group
+              :label="$t('signup.confirmPassword')"
+              label-for="input-confirm-password"
+            >
+              <b-form-input
+                id="input-confirm-password"
+                v-model="confirm"
+                type="password"
+                :state="confirm !== '' ? !errors[0] : null"
+                :placeholder="$t('signup.enterYourConfirmPassword')"
+                aria-describedby="confirm-error"
+                trim
+              />
+              <b-form-invalid-feedback id="confirm-error">
+                {{ $t('signup.passwordsDoNotMatch') }}
+              </b-form-invalid-feedback>
+            </b-form-group>
+          </ValidationProvider>
+
           <b-button
             pill
             block
@@ -101,15 +148,6 @@
             </router-link>
           </div>
         </form>
-
-        <div v-else class="text-center">
-          <div class="text-primary text-large">
-            {{ $t('signup.pleaseCheckYourEmail') }}
-          </div>
-          <div class="mt-2">
-            {{ $t('signup.anEmailToVerifyYourAccountHasBeenSentToYou') }}
-          </div>
-        </div>
       </ValidationObserver>
     </div>
   </div>
@@ -131,8 +169,9 @@ export default Vue.extend({
   data() {
     return {
       email: '',
+      password: '',
+      confirm: '',
       isLoading: false,
-      isSentEmail: false,
     };
   },
 
@@ -147,9 +186,10 @@ export default Vue.extend({
         await this.$axios
           .$post('/auth/signup', {
             email: this.email,
+            password: this.password,
           })
           .then(() => {
-            this.isSentEmail = true;
+            this.$router.push(this.localePath({ name: 'signin' }));
           });
 
         this.$root.$bvToast.toast(
@@ -161,6 +201,8 @@ export default Vue.extend({
         );
       } catch (error: any) {
         this.email = '';
+        this.password = '';
+        this.confirm = '';
 
         if (error.statusCode === 409) {
           this.$root.$bvToast.toast(

@@ -1,16 +1,19 @@
 export default {
   alreadyHaveAnAccount: 'Bạn đã có tài khoản?',
+  confirmPassword: 'Xác nhận mật khẩu',
   emailAddress: 'Địa chỉ email',
   emailAlreadyExists: 'Email đã tồn tại',
+  enterYourConfirmPassword: 'Nhập lại mật khẩu của bạn',
   enterYourEmailAddress: 'Nhập địa chỉ email của bạn',
+  enterYourPassword: 'Nhập mật khẩu của bạn',
+  password: 'Mật khẩu',
+  passwordsDoNotMatch: 'Mật khẩu không khớp',
   pleaseEnterAValidEmailAddress: 'Vui lòng nhập địa chỉ email hợp lệ',
+  pleaseEnterAtLeast6Characters: 'Vui lòng nhập ít nhất 6 ký tự',
   signIn: 'Đăng nhập',
   signInWithGoogle: 'Đăng nhập với Google',
   signUp: 'Đăng ký',
   signUpSuccessful: 'Đăng ký thành công',
   signUpUnsuccessful: 'Đăng ký không thành công',
   welcomeToEShopping: 'Chào mừng đến với eShopping!',
-  pleaseCheckYourEmail: 'Vui lòng kiểm tra email của bạn',
-  anEmailToVerifyYourAccountHasBeenSentToYou:
-    'Một email để xác minh tài khoản của bạn đã được gửi cho bạn',
 };

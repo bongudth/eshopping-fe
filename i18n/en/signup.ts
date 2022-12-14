@@ -1,16 +1,19 @@
 export default {
   alreadyHaveAnAccount: 'Already have an account?',
+  confirmPassword: 'Confirm password',
   emailAddress: 'Email address',
   emailAlreadyExists: 'Email already exists',
+  enterYourConfirmPassword: 'Enter your confirm password',
   enterYourEmailAddress: 'Enter your email address',
+  enterYourPassword: 'Enter your password',
+  password: 'Password',
+  passwordsDoNotMatch: 'Passwords do not match',
   pleaseEnterAValidEmailAddress: 'Please enter a valid email address',
+  pleaseEnterAtLeast6Characters: 'Please enter at least 6 characters',
   signIn: 'Sign in',
   signInWithGoogle: 'Sign in with Google',
   signUp: 'Sign up',
   signUpSuccessful: 'Sign up successful',
   signUpUnsuccessful: 'Sign up unsuccessful',
   welcomeToEShopping: 'Welcome to eShopping!',
-  pleaseCheckYourEmail: 'Please check your email',
-  anEmailToVerifyYourAccountHasBeenSentToYou:
-    'An email to verify your account has been sent to you',
 };
